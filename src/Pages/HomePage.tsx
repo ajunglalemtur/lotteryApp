@@ -3,6 +3,8 @@ import HowToPlay from "../Pages/HowToPlay";
 import CurrentContest from "../Pages/CurrentContest";
 import LatestWinners from "../Pages/LatestWinners";
 import NumbersSpeak from "../Pages/NumbersSpeak";
+import CustomerSupport from "../Pages/CustomerSupport";
+import Footer from "./Footer";
 
 
 const HomePage: React.FC = () => {
@@ -14,6 +16,8 @@ const HomePage: React.FC = () => {
       <CurrentContest />  {/* 🎯 Add Current Contest Section */}
       <LatestWinners /> {/* Added Latest Winners Section */}
       <NumbersSpeak /> {/* 📊 Added Numbers Speak Section */}
+      <CustomerSupport /> {/* 📊 Added Customer Support Section */}
+      <Footer /> {/* 📊 Added Footer Section */}
     </div>
     
   );
