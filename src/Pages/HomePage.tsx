@@ -2,6 +2,7 @@ import React from "react";
 import HowToPlay from "../Pages/HowToPlay";
 import CurrentContest from "../Pages/CurrentContest";
 import LatestWinners from "../Pages/LatestWinners";
+import NumbersSpeak from "../Pages/NumbersSpeak";
 
 
 const HomePage: React.FC = () => {
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
       <HowToPlay /> {/* Add the How to Play Section */}
       <CurrentContest />  {/* 🎯 Add Current Contest Section */}
       <LatestWinners /> {/* Added Latest Winners Section */}
+      <NumbersSpeak /> {/* 📊 Added Numbers Speak Section */}
     </div>
     
   );
