@@ -5,6 +5,7 @@ import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";  
 import Button from "./components/ui/button";
 import "./index.css";
+import ContestDetail from "./Pages/ContestDetail";
 
 
 const App: React.FC = () => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contest/:id" element={<ContestDetail />} />
       </Routes>
     </div>
   );
