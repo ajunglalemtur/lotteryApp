@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { GaugeCircle, Rocket, Bolt, Factory, Calendar } from "lucide-react";
+
 
 const contestDetails = {
   B2T: { name: "The Breeze Zodiac IX", price: "$4.99", image: "/images/car1.jpg", maxEntries: 29994, soldTickets: 17949 },
@@ -15,6 +17,7 @@ const ContestDetail = () => {
   const contest = contestDetails[id as keyof typeof contestDetails];
   const [quantity, setQuantity] = useState(1);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [activeTab, setActiveTab] = useState("description");
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -92,6 +95,89 @@ const ContestDetail = () => {
             <button className="mt-5 px-6 py-3 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600">
               Buy {quantity} Ticket(s)
             </button>
+
+            {/* Tabs Section */}
+            <div className="mt-8">
+              <div className="flex justify-center space-x-4">
+                <button
+                  onClick={() => setActiveTab("description")}
+                  className={`px-6 py-3 font-bold rounded-full ${
+                    activeTab === "description" ? "bg-pink-500 text-white" : "bg-gray-700 text-gray-300"
+                  }`}
+                >
+                  Description
+                </button>
+                <button
+                  onClick={() => setActiveTab("competition")}
+                  className={`px-6 py-3 font-bold rounded-full ${
+                    activeTab === "competition" ? "bg-purple-500 text-white" : "bg-gray-700 text-gray-300"
+                  }`}
+                >
+                  Competition Details
+                </button>
+              </div>
+
+              {/* Content Section */}
+              <div className="mt-6 p-6 bg-purple-700 rounded-lg">
+                {activeTab === "description" && (
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Vehicle Overview</h3>
+                    <p className="text-gray-300">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ex eget mi sollicitudin
+                      consequat. Fusce purus nunc, sodales at condimentum sed, ullamcorper a nulla.
+                    </p>
+                    <h3 className="text-xl font-bold mb-4 flex items-center">
+  <GaugeCircle className="w-6 h-6 mr-2 text-pink-400" /> Specifications
+</h3>
+<div className="grid grid-cols-3 gap-x-6 gap-y-4 text-gray-300">
+  <div className="flex items-center space-x-2">
+    <Rocket className="w-5 h-5 text-pink-400" />
+    <strong>0-62 mph:</strong>
+    <span>4.0 secs</span>
+  </div>
+  <div className="flex items-center space-x-2">
+    <GaugeCircle className="w-5 h-5 text-pink-400" />
+    <strong>Top Speed:</strong>
+    <span>181 mph</span>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Bolt className="w-5 h-5 text-pink-400" />
+    <strong>Power:</strong>
+    <span>542 bhp</span>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Bolt className="w-5 h-5 text-pink-400" />
+    <strong>BHP:</strong>
+    <span>691</span>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Factory className="w-5 h-5 text-pink-400" />
+    <strong>Displacement:</strong>
+    <span>4.0 ltr</span>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Calendar className="w-5 h-5 text-pink-400" />
+    <strong>Year:</strong>
+    <span>2019</span>
+  </div>
+</div>
+
+
+
+                  </div>
+                )}
+                {activeTab === "competition" && (
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Competition Details</h3>
+                    <p className="text-gray-300">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ex eget mi sollicitudin
+                      consequat. Fusce purus nunc, sodales at condimentum sed, ullamcorper a nulla.
+                    </p>
+                     </div>
+                )}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
