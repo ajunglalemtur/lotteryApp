@@ -2,13 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const contestDetails = {
-  B2T: {
-    name: "The Breeze Zodiac IX",
-    price: "$4.99",
-    image: "/images/car1.jpg",
-    maxEntries: 29994,
-    soldTickets: 17949,
-  },
+  B2T: { name: "The Breeze Zodiac IX", price: "$4.99", image: "/images/car1.jpg", maxEntries: 29994, soldTickets: 17949 },
+  X9U: { name: "The Del Sol Trailblazer", price: "$4.99", image: "/images/car2.jpg", maxEntries: 25000, soldTickets: 15000 },
+  "8Y3": { name: "The Miata Dart IV", price: "$4.99", image: "/images/car3.jpg", maxEntries: 20000, soldTickets: 12000 },
+  R9D: { name: "The Fabia Magnum", price: "$4.99", image: "/images/car4.jpg", maxEntries: 22000, soldTickets: 18000 },
+  PR2: { name: "The Omega Navigator", price: "$4.99", image: "/images/car5.jpg", maxEntries: 30000, soldTickets: 19000 },
+  W03: { name: "Shelby Cobra", price: "$4.99", image: "/images/car6.jpg", maxEntries: 18000, soldTickets: 10000 },
 };
 
 const ContestDetail = () => {
@@ -21,7 +20,6 @@ const ContestDetail = () => {
     const countdown = setInterval(() => {
       setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 }); // Replace with actual countdown logic
     }, 1000);
-
     return () => clearInterval(countdown);
   }, []);
 
@@ -34,12 +32,8 @@ const ContestDetail = () => {
         {/* Breadcrumb Navigation */}
         <nav className="mb-6">
           <ul className="flex text-sm text-gray-300">
-            <li>
-              <Link to="/" className="hover:text-white">Home</Link> &gt;
-            </li>
-            <li>
-              <Link to="/contests" className="ml-2 hover:text-white">Contests</Link> &gt;
-            </li>
+            <li><Link to="/" className="hover:text-white">Home</Link> &gt;</li>
+            <li><Link to="/contests" className="ml-2 hover:text-white">Contests</Link> &gt;</li>
             <li className="ml-2 text-white">{contest.name}</li>
           </ul>
         </nav>
@@ -60,7 +54,7 @@ const ContestDetail = () => {
           <img src={contest.image} alt={contest.name} className="w-96 rounded-xl" />
           <div className="text-center md:text-left">
             <h2 className="text-4xl font-bold mb-2">{contest.name}</h2>
-            <p className="text-lg">This competition has a maximum of {contest.maxEntries} entries.</p>
+            <p className="text-lg">Max Entries: {contest.maxEntries}</p>
             <p className="mt-1 text-pink-400">Contest No: {id}</p>
 
             {/* Tickets Progress Bar */}
@@ -96,15 +90,8 @@ const ContestDetail = () => {
 
             {/* Buy Tickets Button */}
             <button className="mt-5 px-6 py-3 bg-pink-500 text-white font-bold rounded-full hover:bg-pink-600">
-              Buy Tickets
+              Buy {quantity} Ticket(s)
             </button>
-
-            {/* Social Sharing */}
-            <div className="mt-4 flex justify-center md:justify-start space-x-3">
-              <button className="bg-blue-500 px-3 py-2 rounded-full">FB</button>
-              <button className="bg-blue-400 px-3 py-2 rounded-full">TW</button>
-              <button className="bg-blue-600 px-3 py-2 rounded-full">IN</button>
-            </div>
           </div>
         </div>
       </div>

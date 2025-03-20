@@ -16,11 +16,6 @@ const CurrentContest: React.FC = () => {
       <h2 className="text-center text-5xl font-bold">CURRENT CONTEST</h2>
       <p className="text-center mt-2 text-lg">Try your chance at winning!</p>
 
-      <div className="flex justify-center space-x-4 mt-6">
-        <button className="px-6 py-2 bg-pink-500 rounded-full text-white font-bold">DREAM CAR</button>
-        <button className="px-6 py-2 bg-purple-500 rounded-full text-white font-bold">ALL LIFESTYLE</button>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-10">
         {contests.map((contest) => (
           <Link key={contest.id} to={`/contest/${contest.id}`} className="block">
@@ -33,13 +28,6 @@ const CurrentContest: React.FC = () => {
             </div>
           </Link>
         ))}
-      </div>
-
-      {/* Browse All Button */}
-      <div className="flex justify-center mt-10">
-        <button className="px-8 py-3 bg-yellow-500 rounded-full text-white text-lg font-bold shadow-lg hover:bg-yellow-600 transition">
-          Browse All
-        </button>
       </div>
     </div>
   );
