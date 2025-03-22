@@ -127,44 +127,41 @@ const ContestDetail = () => {
                       consequat. Fusce purus nunc, sodales at condimentum sed, ullamcorper a nulla.
                     </p>
                     <h3 className="text-xl font-bold mb-4 flex items-center">
-  <GaugeCircle className="w-6 h-6 mr-2 text-pink-400" /> Specifications
-</h3>
-<div className="grid grid-cols-3 gap-x-6 gap-y-4 text-gray-300">
-  <div className="flex items-center space-x-2">
-    <Rocket className="w-5 h-5 text-pink-400" />
-    <strong>0-62 mph:</strong>
-    <span>4.0 secs</span>
-  </div>
-  <div className="flex items-center space-x-2">
-    <GaugeCircle className="w-5 h-5 text-pink-400" />
-    <strong>Top Speed:</strong>
-    <span>181 mph</span>
-  </div>
-  <div className="flex items-center space-x-2">
-    <Bolt className="w-5 h-5 text-pink-400" />
-    <strong>Power:</strong>
-    <span>542 bhp</span>
-  </div>
-  <div className="flex items-center space-x-2">
-    <Bolt className="w-5 h-5 text-pink-400" />
-    <strong>BHP:</strong>
-    <span>691</span>
-  </div>
-  <div className="flex items-center space-x-2">
-    <Factory className="w-5 h-5 text-pink-400" />
-    <strong>Displacement:</strong>
-    <span>4.0 ltr</span>
-  </div>
-  <div className="flex items-center space-x-2">
-    <Calendar className="w-5 h-5 text-pink-400" />
-    <strong>Year:</strong>
-    <span>2019</span>
-  </div>
-</div>
-
-
-
+                    <GaugeCircle className="w-6 h-6 mr-2 text-pink-400" /> Specifications
+                  </h3>
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-4 text-gray-300">
+                    <div className="flex items-center space-x-2">
+                      <Rocket className="w-5 h-5 text-pink-400" />
+                      <strong>0-62 mph:</strong>
+                      <span>4.0 secs</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <GaugeCircle className="w-5 h-5 text-pink-400" />
+                      <strong>Top Speed:</strong>
+                      <span>181 mph</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Bolt className="w-5 h-5 text-pink-400" />
+                      <strong>Power:</strong>
+                      <span>542 bhp</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Bolt className="w-5 h-5 text-pink-400" />
+                      <strong>BHP:</strong>
+                      <span>691</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Factory className="w-5 h-5 text-pink-400" />
+                      <strong>Displacement:</strong>
+                      <span>4.0 ltr</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Calendar className="w-5 h-5 text-pink-400" />
+                      <strong>Year:</strong>
+                      <span>2019</span>
+                    </div>
                   </div>
+               </div>
                 )}
                 {activeTab === "competition" && (
                   <div>
