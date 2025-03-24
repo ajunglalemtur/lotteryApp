@@ -5,7 +5,7 @@ const HowToPlay: React.FC = () => {
     {
       id: "01",
       title: "CHOOSE",
-      description: "Register to RIFA & Choose your contest",
+      description: "Register to Naga Lottery & Choose your contest",
       icon: "🎟️",
     },
     {

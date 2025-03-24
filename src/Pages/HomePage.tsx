@@ -6,6 +6,7 @@ const HowToPlay = lazy(() => import("../Pages/HowToPlay"));
 const CurrentContest = lazy(() => import("../Pages/CurrentContest"));
 const LatestWinners = lazy(() => import("../Pages/LatestWinners"));
 const NumbersSpeak = lazy(() => import("../Pages/NumbersSpeak"));
+import CustomerSupport from "../Pages/CustomerSupport";
 
 const HomePage: React.FC = () => {
   return (
@@ -32,8 +33,12 @@ const HomePage: React.FC = () => {
       <Suspense fallback={<p>Loading Numbers Speak...</p>}>
         <NumbersSpeak />
       </Suspense>
+      <Suspense fallback={<p>Loading Customer Support...</p>}>
+      <CustomerSupport />
+     </Suspense>
 
-      {/* ❌ Removed CustomerSupport from HomePage */}
+
+      
       
       <Footer />
     </main>
@@ -41,3 +46,4 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
