@@ -1,15 +1,20 @@
 import React from "react";
-import Navbar from "../Pages/navbar"; // Adjust path to pages folder
+import { useLocation } from "react-router-dom";
+import Navbar from "../Pages/navbar";
 import Footer from "../Pages/Footer";
- // Adjust path to pages folder
-
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const location = useLocation(); // Get current route
+
+  // List of pages where Footer should be hidden
+  const hideFooterOnPages = ["/customer-support"]; 
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar /> {/* Your navigation bar */}
-      <main className="flex-grow">{children}</main> {/* Page content */}
-      <Footer /> {/* Footer at the bottom */}
+    <div>
+      <Navbar />
+      <main>{children}</main>
+      {/* ✅ Hide Footer only on CustomerSupport page */}
+      {!hideFooterOnPages.includes(location.pathname) && <Footer />}
     </div>
   );
 };
