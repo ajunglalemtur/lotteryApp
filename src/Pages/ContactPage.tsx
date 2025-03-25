@@ -9,14 +9,53 @@ const ContactPage: React.FC = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear error on change
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { name: "", email: "", subject: "", message: "" };
+
+    if (formData.name.trim().length < 3) {
+      newErrors.name = "Name must be at least 3 characters long.";
+      isValid = false;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+      isValid = false;
+    }
+
+    if (formData.subject.trim() === "") {
+      newErrors.subject = "Subject cannot be empty.";
+      isValid = false;
+    }
+
+    if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters long.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Your message has been sent!");
+    if (validateForm()) {
+      console.log("Form submitted:", formData);
+      alert("Your message has been sent!");
+      setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
+    }
   };
 
   return (
@@ -45,6 +84,7 @@ const ContactPage: React.FC = () => {
               onChange={handleChange}
               required
             />
+            {errors.name && <p className="text-red-400 text-sm">{errors.name}</p>}
 
             <label htmlFor="email" className="block mt-4 mb-2">Email*</label>
             <input 
@@ -57,6 +97,7 @@ const ContactPage: React.FC = () => {
               onChange={handleChange}
               required
             />
+            {errors.email && <p className="text-red-400 text-sm">{errors.email}</p>}
 
             <label htmlFor="subject" className="block mt-4 mb-2">Subject*</label>
             <input 
@@ -69,6 +110,7 @@ const ContactPage: React.FC = () => {
               onChange={handleChange}
               required
             />
+            {errors.subject && <p className="text-red-400 text-sm">{errors.subject}</p>}
 
             <label htmlFor="message" className="block mt-4 mb-2">Message*</label>
             <textarea 
@@ -81,6 +123,7 @@ const ContactPage: React.FC = () => {
               onChange={handleChange}
               required
             />
+            {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
           </div>
 
           {/* Contact Info & Illustration */}
@@ -91,7 +134,7 @@ const ContactPage: React.FC = () => {
             </div>
             <div className="mb-4">
               <p className="font-semibold">EMAIL</p>
-              <p className="text-green-400">info@rifa.com</p>
+              <p className="text-green-400">info@nagalottery.com</p>
             </div>
             <img src="/images/contact-illustration.png" alt="Customer Support" className="w-40 mt-4" />
           </div>
