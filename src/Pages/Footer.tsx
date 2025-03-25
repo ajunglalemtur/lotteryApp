@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <p className="text-gray-300 text-sm text-opacity-80">
-            © 2023 <span className="font-bold">Naga Lottery</span>. All Rights Reserved.
+            © 2025 <span className="font-bold">Naga Lottery</span>. All Rights Reserved.
           </p>
 
           {/* Social Media Icons */}

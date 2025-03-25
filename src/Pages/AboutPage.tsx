@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import Breadcrumb from "../components/Breadcrumb"; // Import Breadcrumb
 
 const AboutPage: React.FC = () => {
   return (
@@ -9,6 +10,9 @@ const AboutPage: React.FC = () => {
         <title>About Us | Naga Lottery</title>
         <meta name="description" content="Learn more about Naga Lottery and our mission to bring exciting opportunities to our players!" />
       </Helmet>
+
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb />
 
       <h1 className="text-5xl font-bold">About Naga Lottery</h1>
       <p className="mt-4 text-lg">
