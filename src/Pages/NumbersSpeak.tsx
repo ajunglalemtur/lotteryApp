@@ -4,47 +4,27 @@ import { FaHandshake, FaShieldAlt, FaGlobe, FaHeadset } from "react-icons/fa";
 const features = [
   {
     id: 1,
-    icon: (
-      <span className="text-yellow-400">
-        <FaHandshake size={50} />
-      </span>
-    ),
+    icon: <FaHandshake size={50} />,
     title: "Safe Service",
-    description:
-      "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
+    description: "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
   },
   {
     id: 2,
-    icon: (
-      <span className="text-yellow-400">
-        <FaShieldAlt size={50} />
-      </span>
-    ),
+    icon: <FaShieldAlt size={50} />,
     title: "Security",
-    description:
-      "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
+    description: "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
   },
   {
     id: 3,
-    icon: (
-      <span className="text-yellow-400">
-        <FaGlobe size={50} />
-      </span>
-    ),
+    icon: <FaGlobe size={50} />,
     title: "Network",
-    description:
-      "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
+    description: "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
   },
   {
     id: 4,
-    icon: (
-      <span className="text-yellow-400">
-        <FaHeadset size={50} />
-      </span>
-    ),
+    icon: <FaHeadset size={50} />,
     title: "Support",
-    description:
-      "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
+    description: "Nulla ultricies in nulla ac efficitur. In vel neque arcu. Donec quis.",
   },
 ];
 
@@ -56,9 +36,9 @@ const NumbersSpeak: React.FC = () => {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className="bg-purple-600 p-6 rounded-2xl text-center w-full shadow-lg"
+            className="bg-purple-600 p-6 rounded-2xl text-center w-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-purple-700"
           >
-            <div className="flex justify-center">{feature.icon}</div>
+            <div className="flex justify-center text-yellow-400">{feature.icon}</div>
             <h4 className="text-xl font-bold mt-2">{feature.title}</h4>
             <p className="text-gray-300 text-sm">{feature.description}</p>
           </div>
@@ -67,22 +47,19 @@ const NumbersSpeak: React.FC = () => {
 
       {/* Right: Text Section */}
       <div className="max-w-xl lg:ml-20 text-center lg:text-left mt-10 lg:mt-0">
-        <h3 className="text-yellow-400 text-lg font-semibold">
-          An Exhaustive list of
-        </h3>
+        <h3 className="text-yellow-400 text-lg font-semibold">An Exhaustive list of</h3>
         <h2 className="text-5xl font-bold mt-2">OUR FEATURES.</h2>
         <p className="mt-4 text-lg text-gray-300">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium,
           elit quis vehicula interdum, sem metus iaculis sapien, sed bibendum
           lectus augue eu metus.
         </p>
-        <a href="#" className="text-yellow-400 mt-4 inline-block">
+        <a href="#" className="text-yellow-400 mt-4 inline-block hover:underline">
           Show all features &raquo;
         </a>
       </div>
     </div>
   );
 };
-
 
 export default NumbersSpeak;

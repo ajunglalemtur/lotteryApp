@@ -1,22 +1,45 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-800 to-indigo-900 text-white p-10">
-      <h1 className="text-4xl font-bold text-center mb-6">About Rifa</h1>
-      <p className="text-lg text-center max-w-2xl mx-auto">
-        Rifa is an exciting online platform that offers users a chance to win
-        luxury prizes through fair and transparent contests. We are dedicated to
-        bringing excitement and life-changing opportunities to our participants.
+    <main className="text-center py-20 px-4 max-w-5xl mx-auto">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>About Us | Naga Lottery</title>
+        <meta name="description" content="Learn more about Naga Lottery and our mission to bring exciting opportunities to our players!" />
+      </Helmet>
+
+      <h1 className="text-5xl font-bold">About Naga Lottery</h1>
+      <p className="mt-4 text-lg">
+        Welcome to Naga Lottery! Our mission is to provide a fair, transparent, and exciting lottery experience for everyone.
       </p>
-      <div className="mt-10 text-center">
-        <h2 className="text-2xl font-semibold">Our Mission</h2>
-        <p className="text-lg max-w-xl mx-auto mt-3">
-          We aim to provide a secure, fair, and thrilling experience for all our
-          participants. Join us and take your shot at winning amazing prizes!
-        </p>
-      </div>
-    </div>
+
+      <section className="mt-8 text-left space-y-6">
+        <div>
+          <h2 className="text-3xl font-semibold">Who We Are</h2>
+          <p className="text-gray-300">
+            Naga Lottery is a trusted platform that offers a seamless and secure way to participate in various lottery contests.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold">Our Mission</h2>
+          <p className="text-gray-300">
+            Our goal is to create a fun and rewarding lottery experience while ensuring fairness and transparency in every contest.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-semibold">Why Choose Us?</h2>
+          <ul className="list-disc list-inside text-gray-300">
+            <li>Secure & Transparent Draws</li>
+            <li>Exciting Contests with Huge Rewards</li>
+            <li>Fast & Reliable Customer Support</li>
+          </ul>
+        </div>
+      </section>
+    </main>
   );
 };
 
