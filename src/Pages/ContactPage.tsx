@@ -126,7 +126,7 @@ const ContactPage: React.FC = () => {
             {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
           </div>
 
-          {/* Contact Info & Illustration */}
+          {/* Contact Info & image Support */}
           <div className="flex flex-col justify-center items-center text-center">
             <div className="mb-4">
               <p className="font-semibold">PHONE NUMBER</p>

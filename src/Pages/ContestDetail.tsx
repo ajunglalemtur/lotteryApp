@@ -39,7 +39,7 @@ const ContestDetail = () => {
             <li><Link to="/contests" className="ml-2 hover:text-white">Contests</Link> &gt;</li>
             <li className="ml-2 text-white">{contest.name}</li>
           </ul>
-        </nav>
+        </nav> 
 
         {/* Countdown Timer */}
         <div className="text-center bg-purple-700 p-4 rounded-lg mb-6">
